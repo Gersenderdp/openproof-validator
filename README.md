@@ -1,5 +1,3 @@
-Gersenderdp/openproof-validator
-
 # OpenProof Validator — project status and verification entry point
 
 **Status: this repository is a scaffold, not a complete validation package.**
