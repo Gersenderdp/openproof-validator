@@ -1,72 +1,24 @@
-# OpenProof Validator
+Gersenderdp/openproof-validator
 
-> **OpenProof is the probative infrastructure. TruthX Engine is the deterministic structuring engine powering it. RPO is the Registered Probative Object it produces.**
+# OpenProof Validator — project status and verification entry point
 
-This repository provides public validation tools for **Registered Probative Objects (RPOs)**.
+**Status: this repository is a scaffold, not a complete validation package.**
 
-It checks whether an RPO conforms to the public specification and whether its protected content has retained its structural integrity.
+The current public verification example is maintained in [openproof-net/rpo-spec-v0.1](https://github.com/openproof-net/rpo-spec-v0.1). Start there rather than relying on the placeholder files here.
 
-## Role in the architecture
+## Available checks
 
-| Component | Role |
-|---|---|
-| **TruthX Engine** | Structures heterogeneous evidence through a controlled, deterministic pipeline. |
-| **RPO** | Preserves the resulting record, its sources, transformations, reservations and integrity data. |
-| **OpenProof Validator** | Checks the RPO’s structural conformity and integrity. |
-| **OpenProof** | Provides the surrounding probative infrastructure and verification layer. |
+The [local demonstration checker](https://github.com/openproof-net/rpo-spec-v0.1/blob/main/tools/verify-demo.cjs) inspects basic fields and compares a SHA-256 fingerprint with a supplied, retained reference. Its tests cover content changes, ordering, malformed structures and the documented command.
 
-**Processing chain:**
+[Run the quick start](https://github.com/openproof-net/rpo-spec-v0.1#verify-the-public-example-locally) · [Try browser verification](https://rpo.openproof.net/tests.html)
 
-`Evidence → TruthX Engine → RPO → OpenProof validation`
+## Explicit limits
 
-## What the validator checks
+The demonstration does not perform full JSON Schema validation or verify source files, PDFs, signatures or external registry entries. A matching fingerprint does not establish the truth of an assertion or the legal validity of a record. The reference must itself be preserved or authenticated independently where authenticity matters.
 
-The validator can check:
+The complete OpenProof application and TruthX Engine remain private. The first product pilot is OpenProof Legal.
 
-- canonical JSON structure;
-- presence of required fields;
-- schema compliance;
-- integrity-hash format;
-- correspondence between protected content and its integrity hash;
-- detectable modification of sealed content.
+[Contribute to the maintained example](https://github.com/openproof-net/rpo-spec-v0.1/blob/main/CONTRIBUTING.md) · [Qualify a pilot case](https://openproof.net/qualify?intent=case) · [Contact Gersende](https://www.linkedin.com/in/gryard/)
 
-A successful result means that the submitted object passes the implemented structural and integrity checks.
+Existing licensing terms in this repository are unchanged.
 
-## What successful validation does not mean
-
-Validation does **not** establish:
-
-- that an allegation is true;
-- that a source is authentic or reliable;
-- that the evidence is complete;
-- that a causal interpretation is correct;
-- that the record has a particular legal weight;
-- that a judicial, institutional or governance decision should be taken.
-
-The validator controls the object. It does not decide the merits of the underlying matter.
-
-**Structural validity is not factual truth. Integrity is not judgment.**
-
-## Official specification
-
-The canonical public RPO specification is maintained here:
-
-[openproof-net/rpo-spec-v0.1](https://github.com/openproof-net/rpo-spec-v0.1)
-
-This validator implements checks derived from that specification. The specification remains the authoritative reference.
-
-## Status
-
-Early public reference implementation.
-
-The current validator demonstrates the verification principles and will evolve alongside the public RPO specification.
-
-## Related repositories
-
-- [RPO Specification](https://github.com/openproof-net/rpo-spec-v0.1) — canonical public specification.
-- [RPO Reference](https://github.com/Gersenderdp/rpo-reference) — reference implementation of the specification.
-- [RPO Examples](https://github.com/Gersenderdp/rpo-examples) — example probative objects and use cases.
-
-## Maintainer
-
-Maintained by [Gersende de Parcey](https://github.com/Gersenderdp), founder of TruthX and builder of OpenProof.
